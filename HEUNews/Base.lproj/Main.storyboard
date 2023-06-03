@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SJn-ze-PQL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--工程要闻-->
+        <scene sceneID="Pl2-ZS-eRf">
+            <objects>
+                <viewController id="8bX-px-IG9" customClass="TeachingNewsViewController" customModule="HEUNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q5n-Wr-a4W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2YC-AU-dzK">
+                                <rect key="frame" x="0.0" y="89" width="414" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeachingNewsCell" id="gCc-R2-8Op" customClass="TeachingNewsTableViewCell" customModule="HEUNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gCc-R2-8Op" id="owF-nG-ZkE" customClass="TeachingNewsTableViewCell" customModule="HEUNews" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="WMM-In-Ekf" kind="show" identifier="ShowDetail" id="38A-SG-rMw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8bX-px-IG9" id="cvG-QB-MyW"/>
+                                    <outlet property="delegate" destination="8bX-px-IG9" id="cEo-l1-Ko5"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="xTJ-i6-iDc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="PIV-7b-tIA"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2YC-AU-dzK" firstAttribute="trailing" secondItem="CQD-mG-bbi" secondAttribute="trailing" id="0p0-jl-1QS"/>
+                            <constraint firstItem="2YC-AU-dzK" firstAttribute="top" secondItem="xTJ-i6-iDc" secondAttribute="bottom" id="I0V-WJ-Vjz"/>
+                            <constraint firstItem="2YC-AU-dzK" firstAttribute="bottom" secondItem="CQD-mG-bbi" secondAttribute="bottom" id="JlW-lE-Yxu"/>
+                            <constraint firstItem="2YC-AU-dzK" firstAttribute="leading" secondItem="CQD-mG-bbi" secondAttribute="leading" id="ctI-FW-Bgt"/>
+                            <constraint firstItem="xTJ-i6-iDc" firstAttribute="trailing" secondItem="CQD-mG-bbi" secondAttribute="trailing" id="s8Y-lP-1hf"/>
+                            <constraint firstItem="xTJ-i6-iDc" firstAttribute="leading" secondItem="CQD-mG-bbi" secondAttribute="leading" id="xQf-ah-y3W"/>
+                            <constraint firstItem="xTJ-i6-iDc" firstAttribute="top" secondItem="CQD-mG-bbi" secondAttribute="top" id="xpF-qa-hVy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CQD-mG-bbi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="工程要闻" id="W8u-UD-GEg"/>
+                    <connections>
+                        <outlet property="tableView" destination="2YC-AU-dzK" id="LCA-3v-2Y6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqK-77-iPz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2062.3188405797105" y="1172.5446428571429"/>
+        </scene>
+        <!--Teaching News Content View Controller-->
+        <scene sceneID="k0h-KM-cTe">
+            <objects>
+                <viewController id="WMM-In-Ekf" customClass="TeachingNewsContentViewController" customModule="HEUNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CC5-Je-BXO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8YY-t9-M2b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="me2-HD-dNF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wio-Ld-qXt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2062.3188405797105" y="2014.9553571428571"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IoJ-jM-fB1">
+            <objects>
+                <tabBarController id="SJn-ze-PQL" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gTP-xa-0fE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cRd-6f-m5k" kind="relationship" relationship="viewControllers" id="YMc-s5-hiy"/>
+                        <segue destination="8iQ-hs-C3W" kind="relationship" relationship="viewControllers" id="7Ph-ss-gcU"/>
+                        <segue destination="XdZ-7b-mAp" kind="relationship" relationship="viewControllers" id="e1N-H1-dn7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nE0-m4-fiQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1516" y="419"/>
+        </scene>
+        <!--工程要闻-->
+        <scene sceneID="t12-9X-d0f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cRd-6f-m5k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="工程要闻" image="paperplane" catalog="system" id="uxW-63-Na2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dvy-bM-hFG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8bX-px-IG9" kind="relationship" relationship="rootViewController" id="0lM-li-fWM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pd6-6r-UJZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2959" y="1173"/>
+        </scene>
+        <!--工程时讯-->
+        <scene sceneID="bO1-au-KAS">
+            <objects>
+                <viewController id="brj-re-66b" customClass="WorkFlowViewController" customModule="HEUNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ELF-5v-fLo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NB7-Bk-Mer">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="QDQ-B2-L2V"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ECs-Hw-2pR">
+                                <rect key="frame" x="0.0" y="89" width="414" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkFlowCell" id="84z-eP-IRh" customClass="WorkFlowTableViewCell" customModule="HEUNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="84z-eP-IRh" id="CXf-cf-y5h" customClass="WorkFlowTableViewCell" customModule="HEUNews" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FiT-QD-OHn" kind="show" identifier="wf2" id="uxa-90-836"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="brj-re-66b" id="oyo-ZW-GeX"/>
+                                    <outlet property="delegate" destination="brj-re-66b" id="Y11-R9-tcZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ECs-Hw-2pR" firstAttribute="trailing" secondItem="lgc-p4-q78" secondAttribute="trailing" id="MhM-Pf-A5H"/>
+                            <constraint firstItem="NB7-Bk-Mer" firstAttribute="top" secondItem="lgc-p4-q78" secondAttribute="top" id="Mkv-bU-1rB"/>
+                            <constraint firstItem="ECs-Hw-2pR" firstAttribute="leading" secondItem="lgc-p4-q78" secondAttribute="leading" id="TwL-Hd-gyO"/>
+                            <constraint firstItem="NB7-Bk-Mer" firstAttribute="trailing" secondItem="lgc-p4-q78" secondAttribute="trailing" id="cPQ-Ih-DG0"/>
+                            <constraint firstItem="ECs-Hw-2pR" firstAttribute="top" secondItem="NB7-Bk-Mer" secondAttribute="bottom" id="dAC-du-5Rm"/>
+                            <constraint firstItem="NB7-Bk-Mer" firstAttribute="leading" secondItem="lgc-p4-q78" secondAttribute="leading" id="fO6-PF-9Yx"/>
+                            <constraint firstItem="ECs-Hw-2pR" firstAttribute="bottom" secondItem="lgc-p4-q78" secondAttribute="bottom" id="tCQ-ES-JeB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lgc-p4-q78"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="HnU-Vs-1iQ"/>
+                    <navigationItem key="navigationItem" title="工程时讯" id="MkY-8Y-gsM"/>
+                    <connections>
+                        <outlet property="tableView" destination="ECs-Hw-2pR" id="7fG-1J-gtj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXg-GW-own" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="1173"/>
+        </scene>
+        <!--Work Flow Content View Controller-->
+        <scene sceneID="Aqd-cs-fyA">
+            <objects>
+                <viewController id="FiT-QD-OHn" customClass="WorkFlowContentViewController" customModule="HEUNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3DE-0j-KTh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9jH-Fa-zxJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PLS-NQ-HNg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SqB-z1-kcw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="2015"/>
+        </scene>
+        <!--工程时讯-->
+        <scene sceneID="BBd-A8-4RG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8iQ-hs-C3W" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="工程时讯" image="globe" catalog="system" id="Irb-Ny-7AA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BOb-rC-EGI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="brj-re-66b" kind="relationship" relationship="rootViewController" id="LUl-Z6-0No"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oQ9-0f-M51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-858" y="1173"/>
+        </scene>
+        <!--启航网-->
+        <scene sceneID="4dp-G1-xUX">
+            <objects>
+                <viewController id="00X-8a-fF1" customClass="AnnouncementViewController" customModule="HEUNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="py7-i3-8Lq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZKX-oG-Lhl">
+                                <rect key="frame" x="0.0" y="89" width="414" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnnouncementCell" id="xm4-U9-3kC" customClass="AnnouncementTableViewCell" customModule="HEUNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xm4-U9-3kC" id="xDE-FI-HsE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IaX-4g-BcE" kind="show" identifier="an3" id="OUz-Yh-dah"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="00X-8a-fF1" id="VLG-vD-wKY"/>
+                                    <outlet property="delegate" destination="00X-8a-fF1" id="OV2-3o-ohY"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-x0-4Uh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="yd4-v6-YLe"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZKX-oG-Lhl" firstAttribute="bottom" secondItem="ANk-9Z-g4N" secondAttribute="bottom" id="16W-mK-xRj"/>
+                            <constraint firstItem="rf5-x0-4Uh" firstAttribute="leading" secondItem="ANk-9Z-g4N" secondAttribute="leading" id="RW2-aB-Mig"/>
+                            <constraint firstItem="rf5-x0-4Uh" firstAttribute="trailing" secondItem="ANk-9Z-g4N" secondAttribute="trailing" id="UK0-IR-FoG"/>
+                            <constraint firstItem="ZKX-oG-Lhl" firstAttribute="trailing" secondItem="ANk-9Z-g4N" secondAttribute="trailing" id="WnJ-hS-Irz"/>
+                            <constraint firstItem="ZKX-oG-Lhl" firstAttribute="leading" secondItem="ANk-9Z-g4N" secondAttribute="leading" id="cRM-hA-zAl"/>
+                            <constraint firstItem="rf5-x0-4Uh" firstAttribute="top" secondItem="ANk-9Z-g4N" secondAttribute="top" id="oBb-xt-J8U"/>
+                            <constraint firstItem="ZKX-oG-Lhl" firstAttribute="top" secondItem="rf5-x0-4Uh" secondAttribute="bottom" id="zRF-jT-L6k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ANk-9Z-g4N"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="启航网" id="YKf-XS-6Vx"/>
+                    <connections>
+                        <outlet property="searchBar" destination="rf5-x0-4Uh" id="vSz-eS-75S"/>
+                        <outlet property="tableView" destination="ZKX-oG-Lhl" id="Am9-9E-Geo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4T-uL-aNz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045" y="1173"/>
+        </scene>
+        <!--Announcement Content View Controller-->
+        <scene sceneID="pR1-VU-aKD">
+            <objects>
+                <viewController id="IaX-4g-BcE" customClass="AnnouncementContentViewController" customModule="HEUNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q2p-O1-AOy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="oCP-HE-xNP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t8b-DU-bEc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxg-QA-S95" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045" y="2015"/>
+        </scene>
+        <!--启航网-->
+        <scene sceneID="U5A-fJ-x9l">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XdZ-7b-mAp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="启航网" image="link" catalog="system" id="ANK-Zx-dwc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNR-ET-VDc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="00X-8a-fF1" kind="relationship" relationship="rootViewController" id="QSc-BN-HpT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBm-Fv-KiQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="1173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="link" catalog="system" width="128" height="116"/>
+        <image name="paperplane" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
