@@ -64,7 +64,7 @@ extension TeachingNewsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeachingNewsCell") as! TeachingNewsTableViewCell
         let news = newsList[indexPath.row]
-        cell.textLabel?.text = "[" + news.date + "]" + news.title
+        cell.textLabel?.text = "[" + news.date + "] " + news.title
         return cell
     }
 }
@@ -82,7 +82,7 @@ extension TeachingNewsViewController{
 
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
-                print("server error : announcement")
+                print("server error : 工程要闻")
                 return
             }
 
