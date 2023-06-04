@@ -82,7 +82,7 @@ extension AnnouncementViewController{
 
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
-                print("server error : qi hang wang")
+                print("server error : qihang.hrbeu.edu.cn")
                 return
             }
 
@@ -117,7 +117,7 @@ extension AnnouncementViewController{
 
                             }
                             self.tableView.reloadData()
-                        }catch Exception.Error(_, let message) {
+                        } catch Exception.Error(_, let message) {
                             print(message)
                         } catch {
                             print("error")

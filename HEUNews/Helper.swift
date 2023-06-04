@@ -38,7 +38,6 @@ extension String{
         CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
         CFStringTransform(mutableString, nil, kCFStringTransformStripDiacritics, false)
         let string = String(mutableString)
-        print(string)
         return string
     }
 }

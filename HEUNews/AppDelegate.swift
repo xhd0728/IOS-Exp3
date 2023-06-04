@@ -11,8 +11,8 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    // 05 4F 8F
-    let tintColor =  UIColor(red: 5/255, green: 79/255, blue: 140/255, alpha: 1)
+    // 05 4F 8C
+    let tintColor =  UIColor(red: 5/255, green: 79/255, blue: 160/255, alpha: 1)
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         customizeAppearance()
