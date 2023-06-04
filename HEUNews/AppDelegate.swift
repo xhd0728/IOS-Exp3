@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let tintColor =  UIColor(red: 5/255, green: 79/255, blue: 160/255, alpha: 1)
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Thread.sleep(forTimeInterval: 1)
+        
         customizeAppearance()
         return true
     }
